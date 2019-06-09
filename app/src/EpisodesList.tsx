@@ -2,6 +2,7 @@ import React from "react";
 import { IEpisode, IEpisodeProps } from "./interfaces";
 
 const EpisodesList = ({
+  store: { state, dispatch },
   episodes,
   favourites,
   toggleFavAction
@@ -16,7 +17,10 @@ const EpisodesList = ({
           <div>
             Season: {season} Number: {number}
           </div>
-          <button type="button" onClick={() => toggleFavAction(episode)}>
+          <button
+            type="button"
+            onClick={() => toggleFavAction(state, dispatch, episode)}
+          >
             {favourites.includes(episode) ? "Unfavourite" : "Favourite"}
           </button>
         </section>

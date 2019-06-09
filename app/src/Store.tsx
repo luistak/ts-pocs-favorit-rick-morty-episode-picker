@@ -33,7 +33,9 @@ function reducer(state: IState, { type, payload }: IAction): IState {
 
 export const Store = React.createContext<IState | any>(initialState);
 
-export function StoreProvider({ children }: any): JSX.Element {
+export function StoreProvider({
+  children
+}: JSX.ElementChildrenAttribute): JSX.Element {
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
   return (
