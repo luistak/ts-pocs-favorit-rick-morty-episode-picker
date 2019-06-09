@@ -1,11 +1,11 @@
 import React from "react";
-import { IEpisode } from "./interfaces";
+import { IEpisode, IEpisodeProps } from "./interfaces";
 
 const EpisodesList = ({
   episodes,
   favourites,
   toggleFavAction
-}: any): JSX.Element[] =>
+}: IEpisodeProps): JSX.Element[] =>
   episodes.map((episode: IEpisode) => {
     const { id, image, name, season, number } = episode;
     return (
